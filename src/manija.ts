@@ -1,9 +1,13 @@
 export function generarLorem(n: number): string {
-  if (n===0){
+
+  if (n<1){
     return "."
   }
+  else if (n<2){
+    return "Lorem ipsum" + generarLorem(n-1)
+  }
   else{
-    return "Lorem ipsum"
+    return "Lorem ipsum" + " " + generarLorem(n-1)
   }
 }
 
